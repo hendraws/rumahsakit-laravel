@@ -17,7 +17,7 @@ class CreateObatRekammedisTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('obat_id');
             $table->string('rekammedis_id');
-
+            
             $table->foreign('obat_id')->references('id')->on('obat')->onDelete('cascade');
             $table->foreign('rekammedis_id')->references('id')->on('rekammedis')->onDelete('cascade');
             $table->timestamps();

@@ -22,7 +22,7 @@ $factory->define(Dokter::class, function (Faker $faker) {
         'nip' => $faker->creditCardNumber,
         'nama_dokter' => $faker->name, 
         'slug' => \Str::slug($faker->name),
-        'spesialis' => 'gigi',
+        'spesialis' => 'umum',
         'alamat' => $faker->city,
         'no_telp' => $faker->tollFreePhoneNumber,
     ];

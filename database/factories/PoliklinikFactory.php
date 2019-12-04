@@ -19,11 +19,8 @@ use Illuminate\Support\Str;
 
 $factory->define(Poliklinik::class, function (Faker $faker) {
     return [
-        'nip' => $faker->creditCardNumber,
-        'nama_dokter' => $faker->name, 
-        'slug' => \Str::slug($faker->name),
-        'spesialis' => 'gigi',
-        'alamat' => $faker->city,
-        'no_telp' => $faker->tollFreePhoneNumber,
+        'nama_poli' => 'umum',
+        'slug' => 'umum', 
+        'gedung' => 'Lantai 1', 
     ];
 });
