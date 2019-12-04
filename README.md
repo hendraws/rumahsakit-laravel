@@ -76,3 +76,24 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Cara Install
+
+Setelah memelakukan clone atau download, masuk ke lokasi folder aplikasi yg di download dan jalankan perintah di Termial :
+$  composer install
+$  cp .env.example .env
+$  php artisan key:generate
+
+lalu buat database baru dan sesuaikan config di file .env
+selanjutnya jalankan perintah :
+$  php artisan migrate
+$  php artisan db:seed
+
+dan jalankan :
+$  php artisan serve
+
+untuk default login :
+email = admin@gmail.com 
+password = admin123
+
+
