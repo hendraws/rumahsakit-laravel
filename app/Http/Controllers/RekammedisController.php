@@ -26,7 +26,9 @@ class RekammedisController extends Controller
         //     // dd($data);
         // //    return response()->json(['data'=>$row]);
         //     return view('rekammedis.index', compact('data'));
+        
         $rekammedis = Rekammedis::all();
+        
         $data = Rekammedis::all()->count();
         return view('rekammedis.index', compact('rekammedis','data'));
         
@@ -43,6 +45,7 @@ class RekammedisController extends Controller
 
     public function store(Request $request)
     {
+
         // insert data ke table RekamMedis
         // DB::table('rekammedis')->insert([
         //     'pasien_id' => $request->pasien,

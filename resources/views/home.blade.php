@@ -173,9 +173,6 @@
       </div>
     </div>
     <div class="row mb-5">
-
-
-
       <div class="col-md-4 text-center">
         <p class="mb-4">
           <span class="icon-room d-block h2 text-primary"></span>
@@ -195,8 +192,77 @@
         </p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        @if (session('status'))
+        <div class="row text-center justify-content-center mt-3">
+          <div class="col-md-10">
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('status') }}
+
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        @endif
+        <form action="{{ route('hubungikami') }}" class="p-5 bg-white" method="post">
+          @csrf
+          <h2 class="h4 text-black mb-5">Hubungi Kami</h2>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black ml-1" for="nama">Nama</label>
+              <input type="text" id="nama" class="form-control @error('nama') is-invalid @enderror" name="nama">
+              @error('nama')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black ml-1" for="email">Email</label>
+              <input type="email" id="email" class="form-control" name="email">
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black ml-1" for="telepon">No. Telepon</label>
+              <input type="telp" id="telepon" class="form-control" name="telepon">
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black ml-1" for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" name="subject">
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black ml-1" for="pesan">Pesan</label>
+              <textarea name="pesan" id="pesan" cols="30" rows="7" class="form-control" placeholder=""></textarea>
+            </div>
+          </div>
+
+          <div class="row form-group ml-1">
+            <div class="col-md-12">
+              <input type="submit" class="btn btn-primary btn-md text-white">
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
+    </div>
   </div>
 </section>
-
 
 @endsection

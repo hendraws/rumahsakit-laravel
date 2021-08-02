@@ -70,6 +70,7 @@ $(document).ready(function () {
    });
 
    $('#rekamMedis').DataTable({
+       "order": [[0, "desc"]],
        "bInfo": true,
        scrollY: '250',
        dom: 'lfBrtip',

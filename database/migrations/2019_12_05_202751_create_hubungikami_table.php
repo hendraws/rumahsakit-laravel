@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDokterTable extends Migration
+class CreateHubungikamiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateDokterTable extends Migration
      */
     public function up()
     {
-        Schema::create('dokter', function (Blueprint $table) {
+        Schema::create('hubungikami', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nip',50)->unique();
-            $table->string('nama_dokter',50);
-            $table->string('slug', 100);
-            $table->string('spesialis',50);
-            $table->string('alamat',50);
-            $table->string('no_telp',16);
+            $table->string('nama');
+            $table->string('email');
+            $table->string('telepon');
+            $table->string('subject');
+            $table->text('pesan');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateDokterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dokter');
+        Schema::dropIfExists('hubungikami');
     }
 }

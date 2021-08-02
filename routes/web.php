@@ -6,9 +6,11 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/', 'HomeController@store')->name('hubungikami');
 
 Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
+Route::get('/pesan','HomeController@pesan')->name('pesan');
 // ------------------------------------------------------------------------------------------
 // user
 // ------------------------------------------------------------------------------------------

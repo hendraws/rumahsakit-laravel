@@ -86,10 +86,17 @@
                     <i class="fas fa-fw fa-laptop-medical"></i>
                     <span>Rekam Medis</span></a>
             </li>
-
-
-            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item{{ (request()->is('pesan*')) ? ' active' : '' }}">
+                <a class="nav-link" href="{{ url('pesan') }}">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan</span></a>
+            </li>
+
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Divider -->
             <li class="nav-item{{ Request::is('user') ? ' active' : ''}}">
                 <a class="nav-link" href="{{ route('user') }}">
                     <i class="fas fa-fw fa-user"></i>
